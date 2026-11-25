@@ -1,0 +1,36 @@
+export const invoice = {
+    id: 1,
+    name: 'Componentes PC',
+    client: {
+        name: 'Anakin',
+        lastName: 'Skywalker',
+        address: {
+            country: 'USA',
+            city: 'Los Angeles',
+            street: 'One Street',
+            number: 12
+        },
+    },
+    company: {
+        name: 'New Eng',
+        fiscalNuber: 1234567
+    },
+    items: [
+        {
+            product: 'Cpu Intel i7',
+            price: 499,
+            quantity: 1
+        },
+        {
+            product: 'Corsair Keyboard Mechanic',
+            price: 150,
+            quantity: 1
+        },
+        {
+            product: 'Monitor Asus',
+            price: 350,
+            quantity: 1
+        },
+    ]
+
+}

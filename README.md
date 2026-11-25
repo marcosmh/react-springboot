@@ -18,6 +18,7 @@ Projects React &amp; Spring Boot
 
 * https://es.react.dev/
 
+* https://legacy.reactjs.org/docs/strict-mode.html
 
 ## Commands
 
