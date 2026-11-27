@@ -1,6 +1,20 @@
 import { invoice } from "../data/invoice"
 
+/*
 export const getInvoice = () => {
-    console.log(invoice);
-    return invoice;
+    let total = 0;
+    invoice.items.forEach( item => {
+        total = total + item.price * item.quantity;
+    });
+   
+    return { ...invoice, total }
+}
+*/
+
+export const getInvoice = () => {
+    const total  = invoice.items
+        .map( item => item.price * item.quantity )
+        .reduce( (accumulator, currentValue) => accumulator + currentValue, 0 );
+   
+    return { ...invoice, total }
 }
