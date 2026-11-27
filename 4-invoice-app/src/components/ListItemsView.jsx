@@ -1,6 +1,17 @@
+import PropTypes from "prop-types";
 import { RowItemView } from "./RowItemView";
 
 export const ListItemsView = ({title, items}) => {
+
+    if (import.meta.env.DEV) {
+            PropTypes.checkPropTypes(
+                ListItemsView.propTypes,
+                { title, items },
+                "prop",
+                "ListItemsView"
+            );
+    }
+
     return (
         <>
             <h3>{ title }</h3>
@@ -24,3 +35,8 @@ export const ListItemsView = ({title, items}) => {
     );
 }
 
+
+ListItemsView.propTypes = {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
+}

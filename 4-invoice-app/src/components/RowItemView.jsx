@@ -1,4 +1,16 @@
+import PropTypes from "prop-types";
+
 export const RowItemView = ({ product, price, quantity }) => {
+
+    if (import.meta.env.DEV) {
+        PropTypes.checkPropTypes(
+            RowItemView.propTypes,
+            { product, price, quantity },
+            "prop",
+            "RowItemView"
+        );
+    }
+
     return (
         <>
             <tr>
@@ -8,4 +20,10 @@ export const RowItemView = ({ product, price, quantity }) => {
             </tr>
         </>
     );
+}
+
+RowItemView.propTypes = {
+    product: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired
 }

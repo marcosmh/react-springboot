@@ -1,11 +1,22 @@
-export const ClientView = ({client}) => {
+import PropTypes from "prop-types";
+
+export const ClientView = ({ title, client}) => {
+
+    if (import.meta.env.DEV) {
+            PropTypes.checkPropTypes(
+                ClientView.propTypes,
+                { title, client },
+                "prop",
+                "ClientView"
+            );
+    }
 
     const { name: nameClient, lastName, address } = client;
-     const { country, city, street, number } = address;
+    const { country, city, street, number } = address;
 
     return (
         <>
-          <h3>Datos del Cliente</h3>
+          <h3>{ title }</h3>
             <ul className="list-group">
                 <li className="list-group-item active">{nameClient} {lastName} </li>
                 <li className="list-group-item">{country} / {city}</li>
@@ -13,4 +24,9 @@ export const ClientView = ({client}) => {
             </ul>
         </>
     )
+}
+
+ClientView.propTypes = {
+    title: PropTypes.string.isRequired,
+    client: PropTypes.object.isRequired
 }

@@ -21,10 +21,10 @@ export const InvoiceApp = () => {
 
                         <div className="row my-3">
                             <div className="col">
-                                <ClientView client={client} />
+                                <ClientView title='Datos del Cliente' client={client} />
                             </div>
                             <div className="col">
-                               <CompanyView title='Datos del Cliente' company={company} />
+                               <CompanyView title='Datos de la Empresa' company={company} />
                             </div>
                         </div>
                 

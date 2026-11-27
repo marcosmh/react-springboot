@@ -1,4 +1,16 @@
+import PropTypes from "prop-types";
+
 export const CompanyView = ({ title ,company }) => {
+
+    if (import.meta.env.DEV) {
+        PropTypes.checkPropTypes(
+            CompanyView.propTypes,
+            { title, company },
+            "prop",
+            "CompanyView"
+        );
+    }
+
     const { name: nameCompany, fiscalNuber  } = company;
    
     return (
@@ -11,4 +23,10 @@ export const CompanyView = ({ title ,company }) => {
         </>
     );
 
+}
+
+
+CompanyView.propTypes = {
+    title: PropTypes.string.isRequired,
+    company: PropTypes.object.isRequired
 }
